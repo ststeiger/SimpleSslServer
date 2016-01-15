@@ -61,8 +61,10 @@ namespace CertCreator
 
         static void Main(string[] args)
         {
-            string[] myargs1 = SplitCommandLine("-r -pe -n \"CN=My Root Authority\" -ss CA -sr CurrentUser -a sha1 -sky signature -cy authority -sv CA.pvk CA.cer");
-            string[] myargs2 = SplitCommandLine("-pe -n \"CN=fqdn.of.server\" -a sha1 -sky Exchange -eku 1.3.6.1.5.5.7.3.1 -ic CA.cer -iv CA.pvk -sp \"Microsoft RSA SChannel Cryptographic Provider\" -sy 12 -sv server.pvk server.cer");
+            //string[] myargs1 = SplitCommandLine("-r -pe -n \"CN=My Root Authority\" -ss CA -sr CurrentUser -a sha1 -sky signature -cy authority -sv CA.pvk CA.cer");
+            string[] myargs1 = SplitCommandLine("-r -n \"CN=My Root Authority\" -ss CA -sr CurrentUser -a sha1 -sky signature -cy authority -sv CA.pvk CA.cer");
+            //string[] myargs2 = SplitCommandLine("-pe -n \"CN=fqdn.of.server\" -a sha1 -sky Exchange -eku 1.3.6.1.5.5.7.3.1 -ic CA.cer -iv CA.pvk -sp \"Microsoft RSA SChannel Cryptographic Provider\" -sy 12 -sv server.pvk server.cer");
+            string[] myargs2 = SplitCommandLine("-n \"CN=fqdn.of.server\" -a sha1 -sky Exchange -eku 1.3.6.1.5.5.7.3.1 -ic CA.cer -iv CA.pvk -sp \"Microsoft RSA SChannel Cryptographic Provider\" -sy 12 -sv server.pvk server.cer");
 
 
             // http://stackoverflow.com/questions/496658/using-makecert-for-development-ssl 

@@ -128,7 +128,9 @@ namespace Mono.Tools
                 int i = 0;
                 while (i < args.Length)
                 {
-                    switch (args[i++])
+                    string foo = args[i++];
+                    //switch (args[i++])
+                    switch(foo)
                     {
                         // Basic options
                         case "-#":
@@ -391,7 +393,7 @@ namespace Mono.Tools
                         default:
                             if (i != args.Length)
                             {
-                                Console.WriteLine("ERROR: Unknown parameter");
+                                Console.WriteLine("ERROR: Unknown parameter \"" + foo + "\"");
                                 Help();
                                 return -1;
                             }
